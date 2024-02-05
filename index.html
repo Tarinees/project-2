@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <body>
+    <div class="box-outer">
+      <form>
+        <div class="inner_div">
+          <h2 class="headding">Sign Up Form</h2>
+          <label for="info1">First Name</label>
+          <input
+            type="text"
+            name="First name"
+            id="info1"
+            placeholder="Your first name"
+            class="controler"
+          />
+          <label for="info2">Last Name</label>
+          <input
+            type="text"
+            name="Last name"
+            id="info2"
+            placeholder=" Your last name"
+            class="controler"
+          />
+          <label for="info3">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="info3"
+            placeholder="Your email address"
+            class="controler"
+            required
+          />
+          <label for="info4"> New Password</label>
+          <input type="password" name="password" id="info4" class="controler" />
+          <input
+            type="submit"
+            name="submit"
+            class="button"
+            value="Signup Now For FREE"
+            onclick="handelform(event)"
+            required
+          />
+        </div>
+      </form>
+    </div>
+    <script>
+      // function handelform(event) {
+      //   // let Firstname = document.getElementById("info1");
+      //   // let Lastname = document.getElementById("info2");
+      //   // let Email = document.getElementById("info3");
+      //   // let Password = document.getElementById("info4");
+
+      //   fetch("https://jsonplaceholder.typicode.com/posts/1", {
+      //     method: "PUT",
+      //     headers: {
+      //       "content-type": "application/json;charset=UTF-8",
+      //     },
+      //     body: JSON.stringify({
+      //       Firstname: Firstname.value,
+      //       Lastname: Lastname.value,
+      //       Password: Password.value,
+      //       Email: Email.value,
+      //     }),
+      //   })
+      //     .then((res) => {
+      //       return res.json();
+      //     })
+      //     .then((data) => {
+      //       console.log(data);
+      //     });
+      //   Firstname.value = "";
+      //   Lastname.value = "";
+      //   Password.value = "";
+      //   Email.value = "";
+      // }
+
+      fetch('https://jsonplaceholder.typicode.com/posts/1', {
+  method: 'patch',
+  body: JSON.stringify({
+    id: 1,
+    title: 'maqbool',
+ 
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+    </script>
+  </body>
+</html>
